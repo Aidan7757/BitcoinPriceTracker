@@ -1,6 +1,7 @@
 import tkinter as tk
-import requests
 from datetime import datetime
+
+import requests
 
 
 def trackBitcoin():
@@ -9,10 +10,10 @@ def trackBitcoin():
     price = response["USD"]
     time = datetime.now().strftime("%H:%M:%S")
 
-    labelPrice.config(text=str(price) + "$")
+    labelPrice.config(text="$" + str(price))
     labelTime.config(text="Updated at: " + time)
 
-    canvas.after(5000, trackBitcoin)
+    canvas.after(1000, trackBitcoin)
 
 
 canvas = tk.Tk()
